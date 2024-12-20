@@ -7,7 +7,7 @@ const getAuthToken = async () => {
             'https://9d6526betrial.authentication.us10.hana.ondemand.com/oauth/token',
             qs.stringify({
                 client_id: 'sb-reactBE-9d6526betrial-dev!t346653',
-                client_secret: '0a413f28-ef90-46f2-bdd9-1f4f947e0b9e$i_99omS_NLF3NHernoyGtPQ35dUdKGV5No_ba01ou9g=',
+                client_secret: 'ac334b4b-0881-41b8-a833-985f313a808c$wDYStsnoBZKYRuq8b2yYOWSidTCdNa1b5XmxuHkVWcw=',
                 grant_type: 'client_credentials',
             }),
             {
@@ -39,13 +39,12 @@ api.interceptors.request.use(async (config) => {
     }
 });
 
-// Named function to fetch data
 export const fetchData = async (endpoint) => {
     try {
         const response = await api.get(endpoint);
         return response.data;
     } catch (error) {
-        console.error('Error fetching data:', error.response?.data || error.message);
+        console.error('Error fetching data:');
         throw error;
     }
 };
